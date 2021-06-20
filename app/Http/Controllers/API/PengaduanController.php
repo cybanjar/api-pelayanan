@@ -17,7 +17,8 @@ class PengaduanController extends Controller
     public function index() {
         $pengaduan = Pengaduan::paginate(15);
         return response()->json([
-            'success' => true
+            'success'   => true,
+            'data'      => $pengaduan
         ]);
     }
 
@@ -25,7 +26,7 @@ class PengaduanController extends Controller
         $validator = $request->validate([
             'kategoriPengaduan'     => 'required',
             'deskripsi'             => 'required',
-            'gambar'                => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar'                => 'mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
         ]);
 
         if(!$validator) {
