@@ -15,7 +15,7 @@ class PengaduanController extends Controller
     }
 
     public function index() {
-        $pengaduan = Pengaduan::paginate(15);
+        $pengaduan = Pengaduan::paginate(100);
         return response()->json([
             'success'   => true,
             'data'      => $pengaduan

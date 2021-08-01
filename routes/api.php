@@ -27,7 +27,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('pengaduan/{id}', [PengaduanController::class, 'show']);
     Route::delete('/pengaduan/{id}', [PengaduanController::class, 'destroy']);
     Route::put('/pengaduan/{id}', [PengaduanController::class, 'update']);
+
+    Route::get('/dataUser', [UserController::class, 'index']);
 });
 
 Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'register']);
+Route::post('forgot-password', [UserController::class, 'forgotPassword']);
+Route::post('reset-password', [UserController::class, 'resetPassword']);
