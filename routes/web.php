@@ -15,10 +15,10 @@ use App\Http\Controllers\FileController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [FileController::class, 'index']);
+// Route::get('/', [FileController::class, 'index']);
 
-Route::post('/upload', [FileController::class, 'upload'])->name('upload');
+// Route::post('/upload', [FileController::class, 'upload'])->name('upload');

@@ -59,13 +59,14 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new ResetPasswordNotification($url));
     }
 
-    public function getCreatedAtAttribute($value)
-    {
-        return Carbon::parse($value)->timestamp;
-    }
+    // format date
+    // public function getCreatedAtAttribute($value)
+    // {
+    //     return Carbon::parse($value)->timestamp;
+    // }
 
-    public function getUpdatedAtAttribute($value)
-    {
-        return Carbon::parse($value)->timestamp;
-    }
+    // public function getUpdatedAtAttribute($value)
+    // {
+    //     return Carbon::parse($value)->timestamp;
+    // }
 }
