@@ -5,8 +5,10 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\PengaduanController;
 use App\Http\Controllers\API\EmailVerificationController;
+use App\Http\Controllers\API\TourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,9 @@ Route::post('/token', function (Request $request) {
     //     'token_type' => 'Bearer',
     // ], 200);
 });
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
+
+Route::get('/tours', [TourController::class, 'index']);
+Route::post('/tours', [TourController::class, 'store']);
