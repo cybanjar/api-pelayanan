@@ -27,7 +27,7 @@ class CreateToursTable extends Migration
             $table->string('long')->nullable();
             $table->string('image');
             $table->bigInteger('price')->default(5000);
-            $table->boolean('flag')->default(false);
+            $table->integer('flag')->default(0);
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
